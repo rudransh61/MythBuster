@@ -4,13 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xtra Blog</title>
+    <title>MythBusters Blog</title>
     <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <!-- https://fonts.google.com/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/templatemo-xtra-blog.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="jquery.jslatex.js"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <!--
+
     
 TemplateMo 553 Xtra Blog
 
@@ -58,7 +66,7 @@ https://templatemo.com/tm-553-xtra-blog
                             <h2 class="pt-2 tm-color-primary tm-post-title" style="color:white">1+2+3..... </h2>
                             <p class="tm-mb-40" style="color:white">12-23-2023 - Rudransh Bharwdaj</p>
                             <p style="color:white">
-                                There is a very famous mathematical argument that 1+2+3..... = -1/12=-0.08333333333333..
+                                There is a very famous mathematical argument that $$ 1+2+3..... = -\frac{1}{12}=-0.08333333333333..$$
                                 given by Ramanuja also known as "Ramanuja summation". But many people interpret this
                                 wrongly ,
                                 For example a famous maths channel on youtube name "NumberPhile" proved this
@@ -66,11 +74,12 @@ https://templatemo.com/tm-553-xtra-blog
                                 wrongly .
                                 The speaker says that the Numberphile video made 3 wrong statements:
                             <ul>
-                                <li>The infinite series 1 + 2 + 3 + ... actually sums to positive infinity, not -1/12.</li>
+                                <li>The infinite series $$ 1 + 2 + 3 + ...$$ actually sums to positive infinity, not $$-\frac{1}{12}$$.
+                                </li>
                                 <li>The way the Numberphile video presents summing infinite series is not mathematically
-                                rigorous.</li>
+                                    rigorous.</li>
                                 <li>There is no such thing as “super summing” that can make divergent infinite series
-                                converge.</li>
+                                    converge.</li>
 
                             </ul>
 
@@ -78,18 +87,56 @@ https://templatemo.com/tm-553-xtra-blog
                             So , Lets deep dive into this problem and world of series in maths...........
                             <br>
 
-                            A series is a type of sequence with meaningful order like 1,2,3,4,... or 1,3,5,7,9... or 2,3,5,7,11 or 4,9,16... etc.
+                            A series is a type of sequence with meaningful order like $$ 1,2,3,4,... $$ or $$ 1,3,5,7,9... $$ or
+                            $$ 2,3,5,7,11 $$ or $$ 4,9,16...$$ etc.
                             There is a long history of calculating sum of series and playing with them.
 
-                            And according to there sum , there are 2 types of series diverging and converging series 
+                            And according to there sum , there are 2 types of series diverging and converging series
                             <br>
-                            Diverging (sequence with sum tending to infinity ): From Medieval Latin dīvergō (“bend away from, go in a different direction”), from Latin dī- + vergō (“bend”).
-                            Converging (sequence with sum tending to some finite number ): traces back to the Latin word vergere, meaning “to bend or to turn.
+                            Diverging (sequence with sum tending to infinity ): From Medieval Latin dīvergō (“bend away
+                            from, go in a different direction”), from Latin dī- + vergō (“bend”).
+                            Converging (sequence with sum tending to some finite number ): traces back to the Latin word
+                            vergere, meaning “to bend or to turn.
                             <br>
-                            Or 
+                            So , this was some information about series in maths
+                            Lets look at a very famous mathematical function called zeta function
+                            <div class="latex">
+                                $$
+                                \zeta (s) = \sum_{n=1}^{\infty} \frac{1}{n^s}
+                                $$ and 
+                                $$ s>1 $$
+                            </div>
 
+                            But many mathematicians tried to expand its domain to Real Number or to all complex numbers which Riemann hypothesis is about (not related to this topic).
+                            
+                            But there is a problem , because while expanding the domain , it cannot be defined for all Real Numbers &lt;1 ....
+
+                            So , we have to apply analytical continuation , which means we have to complete the graph by analyzing the known values creating a smooth differentiable curve .
+                            And the equation for that curve is ,
+                            $$ \zeta(1-s) = 2^{1-s} \pi^{-s} cos(\frac{\pi s}{2}) \Gamma(s) \zeta(s) $$  
+
+
+                            And we know that ,
+                            $$  
+                            
+                            \zeta(-1) = 1+2+3....... (but it does not exists)
+                            
+                            $$
+
+                            But if you use our New equation, you can find its value (which is the value of ** $$\zeta(-1)=-\frac{1}{12}$$ **)
+
+
+                            So,.... zeta of -1 is not 1+2+3....... its analytically equivalent to $$-\frac{1}{12}$$
 
                             </p>
+
+
+                            Also before writing this article i found no original paper of Ramanuja proofing 1+2+3+4.... = -1/12
+
+                                <br><br>
+                            The original paper by Srinivasa Ramanujan that proves the analytical expression for the value of zeta(-1) is titled "A Proof of Certain Identities in Combinatory Analysis" and was published in the Proceedings of the Cambridge Philosophical Society, Vol. 16, No. 5 (1910), pp. 350-357.
+
+
                             <span class="d-block text-right tm-color-primary">Mathematics</span>
                         </div>
 
